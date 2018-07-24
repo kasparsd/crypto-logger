@@ -1,5 +1,5 @@
 {
-  "name": "crypto-spider",
+  "name": "crypto-logger",
   "version": "1.0.0",
   "description": "Fetch and store market history of Ethereum",
   "dependencies": {
