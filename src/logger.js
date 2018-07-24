@@ -44,6 +44,8 @@ axios.get(apiUrl)
         return resp.data.RAW.ETH[refSymbol][field.toUpperCase()];
       });
 
+      console.log(rowData);
+
       createCsvWriter({
         path: `data/${filename}`,
         header: csvFields,
