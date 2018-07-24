@@ -1,5 +1,6 @@
 const axios = require('axios');
 const createCsvWriter = require('csv-writer').createArrayCsvWriter;
+const dateFormat = require('dateformat');
 
 const fiatSymbols = [
   "USD",
@@ -32,7 +33,7 @@ const apiUrl = `https://min-api.cryptocompare.com/data/pricemultifull?fsyms=ETH&
 const csvDate = new Date();
 
 function csvFilename(date, symbolFrom, symbolTo) {
-  const dateStamp = `${date.getFullYear()}${date.getMonth()+1}${date.getDate()}`;
+  const dateStamp = dateFormat(date, 'UTC:yyyymmdd');
   return `${dateStamp}-${symbolFrom}-${symbolTo}.csv`;
 }
 
