@@ -59,6 +59,16 @@ foreach ( $allRange as $minutes ) {
 			'volumefrom' => $volumes[0],
 			'volumeto' => end( $volumes ),
 		];
+	} else {
+		$minuteHistory[] = [
+			'time' => $minutes * 60,
+			'open' => 0,
+			'close' => 0,
+			'high' => 0,
+			'low' => 0,
+			'volumefrom' => 0,
+			'volumeto' => 0,
+		];
 	}
 }
 
