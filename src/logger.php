@@ -46,7 +46,9 @@ $csvFieldsApi = array_map( 'strtoupper', $csvFields );
 $fileMap = [];
 
 foreach ( $apiResponse->RAW->ETH as $refSymbol => $fields ) {
-    $row = [];
+    $row = [
+        time(),
+    ];
 
     foreach ( $csvFieldsApi as $csvFieldName ) {
         if ( isset( $fields->$csvFieldName ) ) {
@@ -63,7 +65,7 @@ foreach ( $apiResponse->RAW->ETH as $refSymbol => $fields ) {
         $filenameDate,
         strtolower( $refSymbol )
       ),
-      'header' => $csvFields,
+      'header' => array_merge( [ 'timestamp' ], $csvFields ),
       'data' => [ $row ],
     ];
 }
