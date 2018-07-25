@@ -72,6 +72,10 @@ foreach ( $allRange as $minutes ) {
 	}
 }
 
+array_walk( $minuteHistory, function( $value ) {
+	return floatval( $value );
+} );
+
 header( 'Content-Type: application/json' );
 
 echo json_encode( [
