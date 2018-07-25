@@ -76,6 +76,7 @@ array_walk( $minuteHistory, function( $value ) {
 	return floatval( $value );
 } );
 
+header( 'Access-Control-Allow-Origin: *' );
 header( 'Content-Type: application/json' );
 
 echo json_encode( [
